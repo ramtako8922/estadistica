@@ -1,0 +1,31 @@
+name: publicar-paquete
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          registry-url: 'ttps://npm.pkg.github.com/'
+          scope: '@ramtako8922'  # Reemplaza 'tu-usuario' con tu nombre de usuario de GitHub
+
+
+      - name: Install dependencies de package lock json
+        run: npm ci
+
+      - name: publicar paquete en github
+        run: npm publish 
+        env:
+            NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Usa el token de GitHub para autenticarte
+            
