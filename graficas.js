@@ -8,7 +8,7 @@ async function crearGrafica(nombreArchivo, labels, data) {
     const configuration = {
         type: 'bar',
         data: {
-            labels: labels,
+            labels,
             datasets: [{
                 label: 'Datos de ejemplo',
                 data,
