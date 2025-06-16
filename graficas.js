@@ -17,15 +17,7 @@ async function crearGrafica(nombreArchivo, labels, data) {
                 
             }]
         },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: {
-                    display: true,
-                    position: 'top',
-                }
-            }
-        }
+       
     };
 
     const imagen = await chartJSNodeCanvas.renderToBuffer(configuration);
