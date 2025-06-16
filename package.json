@@ -1,6 +1,6 @@
 {
   "name": "@ramtako8922/estadistica",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "paquete de estadística para JavaScript",
   "main": "index.js",
   "scripts": {
